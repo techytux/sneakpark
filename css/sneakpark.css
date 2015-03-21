@@ -1,0 +1,167 @@
+.show-grid {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+.spmain-heading {
+  font-family : Montserrat;
+  font-size : 25px;
+  letter-spacing : 1.6px;
+  text-transform : uppercase;
+  color : #4D4D4D;
+  color : rgb(77, 77, 77);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.spbox {
+	background-color: #f8f8f8;
+	margin: 20px 15px 0px 15px;
+
+}
+
+.spbox-heading {
+  padding: 20px 0 10px 0;
+  text-align: center;
+  font-family : Montserrat;
+  font-size : 18px;
+  letter-spacing : 0.9px;
+  color : #4D4D4D;
+  color : rgb(77, 77, 77);
+
+}
+
+.sppie-box {
+	text-align: center;
+	padding: 0 10px 10px 10px;
+}
+
+.sppie {
+	width: 110px;
+	float: left;
+	margin: 0 10px 0 10px;
+}
+
+.sppie-box-address{
+	text-align: center;
+	font-family : Raleway;
+	font-size : 14px;
+	line-height : 55px;
+	letter-spacing : 0.7px;
+	color : #4D4D4D;
+	color : rgb(77, 77, 77);
+}
+
+.sppie-inner-box {
+	padding: 20px 10px 20px 5px;
+  float: left;
+}
+
+.sppie-number {
+	font-family: Montserrat;
+  font-size: 32px;
+  letter-spacing: 1.6px;
+  color: #4D4D4D;
+  color: rgb(77, 77, 77);
+}
+
+.sppie-number-address {
+	float: bottom;
+	display: block;
+}
+.progress {
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 7px;
+    margin-left: 9px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.progress-bar {
+    width: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: width 3s ease;
+    -moz-transition: width 3s ease;
+    transition: width 3s ease;
+}
+
+.progress-bar-success {
+    background-color: #ffa700;
+}
+
+.progress-annotation {
+	display: inherit;
+    opacity: .75;
+	padding-top: 10px;
+	font-family : Montserrat;
+	font-size : 12px;
+  	letter-spacing : 0.9px;
+
+}
+.annotation {
+    float: right;
+    opacity: .75;
+    font-style: italic;
+}
+
+.chart {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 70px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin-right: 5%;
+    text-align: center;
+}
+
+.chart canvas {
+    position: absolute;
+    left: 0;
+}
+
+.percent {
+    display: inline-block;
+    line-height: 110px;
+    z-index: 2;
+    opacity: .75;
+    font-style: italic;
+}
+
+.sppie-icon {
+    display: inline-block;
+    line-height: 110px;
+    z-index: 2;
+    opacity: .75;
+    font-style: italic;
+}
+.sppie-icon img{
+    width:50%;
+}
+
+.sppie-ring-icon {
+  background: url("../img/ring_green_90.svg");
+  background-repeat: no-repeat;
+  height: 70px;
+  background-size: 70px;
+  line-height: 4.7;
+  background-position: center;
+}
+
+.sppie-ring-icon img{
+	width:40%;
+}
+.percent:after {
+    content: '%';
+    margin-left: 0.1em;
+}
