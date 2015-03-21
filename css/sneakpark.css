@@ -63,10 +63,11 @@
 
 .sppie-number {
 	font-family: Montserrat;
-  font-size: 32px;
+  font-size: 50px;
   letter-spacing: 1.6px;
   color: #4D4D4D;
   color: rgb(77, 77, 77);
+  margin-bottom: 8px;
 }
 
 .sppie-number-address {
@@ -104,9 +105,18 @@
     opacity: .75;
 	padding-top: 10px;
 	font-family : Montserrat;
-	font-size : 12px;
+	font-size : 14px;
   	letter-spacing : 0.9px;
 
+}
+
+.sppie-ring-annotation {
+	padding-top: 10px;
+	font-family : Montserrat;
+  font-size : 14px;
+  letter-spacing : 0.7px;
+  color : #4D4D4D;
+  color : rgb(77, 77, 77);
 }
 .annotation {
     float: right;
@@ -153,13 +163,15 @@
   background: url("../img/ring_green_90.svg");
   background-repeat: no-repeat;
   height: 70px;
+  width: 92px;
   background-size: 70px;
   line-height: 4.7;
   background-position: center;
+  margin-bottom: 10px;
 }
 
 .sppie-ring-icon img{
-	width:40%;
+	width:30%;
 }
 .percent:after {
     content: '%';
