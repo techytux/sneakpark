@@ -39,6 +39,8 @@
     
     var lat = 52.52000659999999;
     var lon = 13.404953999999975;
+    //var lat = 52.505369;
+    //var lon = 13.3947229;
     var myCenter=new google.maps.LatLng(lat,lon);
     
     function initialize()
@@ -70,6 +72,7 @@
         
         var markers = [
             ['',52.51601487,13.40292644,0.4647],
+            //['',52.52000659999999,13.404953999999975,0.4647],
             ['',52.52103248,13.25724395,9.9975],
             ['',52.52586918,13.32950906,5.1472],
             ['',52.45966148,13.38086316,6.9074],
@@ -154,7 +157,8 @@
         var marker=new google.maps.Marker({
             position:new google.maps.LatLng(lat, lon),
             icon:image,
-            url:'https://www.google.com/maps/@'+lat+','+lon+',15z'
+            //url:'https://www.google.com/maps/@'+lat+','+lon+',15z'
+            url:'http://maps.google.com/maps?q=loc:'+lat+','+lon
             //url:'http://maps.apple.com/?ll=='+lat+','+lon
         });
         
