@@ -1,3 +1,13 @@
+.zero-padding {
+	padding:0 0 0 0;
+}
+
+.spindexbg {
+	background-image: url("../img/index.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
 .show-grid {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -37,13 +47,13 @@
 
 .sppie-box {
 	text-align: center;
-	padding: 0 10px 10px 10px;
+	padding: 0 0 10px 0;
 }
 
 .sppie {
-	width: 110px;
+	width: 100px;
 	float: left;
-	margin: 0 10px 0 10px;
+	margin: 0 0 0 0;
 }
 
 .sppie-box-address{
@@ -57,7 +67,7 @@
 }
 
 .sppie-inner-box {
-	padding: 20px 10px 20px 5px;
+	padding: 20px 0px 20px 0px;
   float: left;
 }
 
