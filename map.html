@@ -26,25 +26,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <style>
-    /*
-    body {
-        margin: 0;
-        width: 100%; 
-        height: 100%;
-    }
-    #googleMap {
-        position: relative;
-        padding-bottom: 100%;
-        height: 0;
-        overflow: hidden;
-    }
-    .gm-style {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        height: 100% !important;
-    }*/
+    #bottom_banner{background-image:url('img/altroute.png');background-repeat:no-repeat;background-size:480px auto;width:100%;height:127px;}
 </style>
 
 <!-- main jquery libraries / others are at the bottom-->
@@ -173,6 +155,11 @@
           scaledSize: new google.maps.Size(35, 72)
         };
         
+        var breite_2x = {
+            url:'img/breite@2x.png',
+            scaledSize: new google.maps.Size(140, 83)
+        };
+        
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
         var marker=new google.maps.Marker({
             position:new google.maps.LatLng(lat, lon),
@@ -191,9 +178,11 @@
         
         var marker=new google.maps.Marker({
             position:new google.maps.LatLng(markers[0][1], markers[0][2]),
-            icon:'img/active_icon.svg',
+            //icon:'img/active_icon.svg',
+            icon:breite_2x,
             url:'http://maps.google.com/maps?q=loc:'+markers[0][1]+','+markers[0][2],
-            animation: google.maps.Animation.BOUNCE
+            animation: google.maps.Animation.DROP
+            //animation: google.maps.Animation.BOUNCE
         });
         
         google.maps.event.addListener(marker, 'click', function() {
@@ -268,8 +257,9 @@
 </head>
 <body>
 
-<!--<div id="googleMap" style="width:540px;height:950px;"></div>-->
-<div id="googleMap" style="width:480px;height:640px;"></div>
+<!--<div id="googleMap" style="width:480px;height:720px;"></div>-->
+<div id="googleMap" style="width:480px;height:593px;"></div>
+<div id="bottom_banner">&nbsp;</div>
 
 <!-- Java Script -->
 <!-- Placed at the end of the document so the pages load faster -->
