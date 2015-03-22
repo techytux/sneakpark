@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<html class="not-ie" lang="en">
+<!--<![endif]-->
+    
+<head>
+<meta charset="utf-8">
+<meta name="description" content="description" />
+<meta name="keywords" content="software, engineer, developer, python, data"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title>Sneak Park</title>
+
+<!-- google web font-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+<!-- style sheets-->
+<link rel="stylesheet" media="all" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" media="all" href="css/sneakpark.css" type="text/css"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+<!-- main jquery libraries / others are at the bottom-->
+<script src="js/jquery.min.js " type="text/javascript"></script>
+<script src="js/modernizr.js" type="text/javascript"></script>
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    // Map Style
+    var map;
+    var MY_MAPTYPE_ID = 'custom_style';
+    
+    var lat = 52.52000659999999;
+    var lon = 13.404953999999975;
+    var myCenter=new google.maps.LatLng(lat,lon);
+    
+    function initialize()
+    {
+        // Map Style
+        var featureOpts = [
+            {
+              stylers: [
+                { hue: '#00ffe6' },
+                { visibility: 'simplified' },
+                { gamma: 0.5 },
+                { weight: 0.5 },
+                { saturation: -100 }
+              ]
+            },
+            {
+              elementType: 'labels',
+              stylers: [
+                { visibility: 'off' }
+              ]
+            },
+            {
+              featureType: 'water',
+              stylers: [
+                { color: '#EEE' }
+              ]
+            }
+          ];
+        
+        var markers = [
+            ['',52.52103248,13.25724395,9.9975],
+            ['',52.52586918,13.32950906,5.1472],
+            ['',52.45966148,13.38086316,6.9074],
+            ['',52.54532304,13.29629545,7.8726],
+            ['',52.46430038,13.37034303,6.6245],
+            ['',52.48416011,13.47871647,6.3906],
+            ['',52.55188257,13.44566281,4.4895],
+            ['',52.5249487,13.33472829,4.7843],
+            ['',52.4700133,13.43579666,5.9399],
+            ['',52.54760416,13.32160954,6.4203],
+            ['',52.57654832,13.33941484,7.6942],
+            ['',52.57115899,13.35891475,6.486],
+            ['',52.59698099,13.39792185,8.5748],
+            ['',52.56573795,13.28563937,9.5401],
+            ['',52.59494033,13.36135342,8.8407],
+            ['',52.54085037,13.34766178,4.5169],
+            ['',52.49611107,13.38824369,2.8885],
+            ['',52.60367993,13.35969591,9.7969],
+            ['',52.53337347,13.49022707,5.9588],
+            ['',52.49101754,13.4217469,3.4189],
+            ['',52.52172486,13.28387371,8.1967],
+            ['',52.52075915,13.53196177,8.5962],
+            ['',52.49048756,13.36949696,4.0672],
+            ['',52.56109141,13.3813217,4.8413],
+            ['',52.44681715,13.42575508,8.2616],
+            ['',52.44449535,13.38170959,8.5451],
+            ['',52.50209993,13.47664163,5.2456],
+            ['',52.57934271,13.32593491,8.4923],
+            ['',52.51997575,13.33098621,5.0061],
+            ['',52.50770808,13.40514322,1.368],
+            ['',52.50231118,13.41544783,2.0925],
+            ['',52.52300686,13.53221877,8.6194],
+            ['',52.57863854,13.49622995,8.9799],
+            ['',52.47042866,13.36914827,6.0239],
+            ['',52.47133251,13.35108547,6.5281],
+            ['',52.51860026,13.51298489,7.3133],
+            ['',52.49397331,13.52970179,8.928],
+            ['',52.53155111,13.41021959,1.3326],
+            ['',52.47457388,13.49857601,8.1072],
+            ['',52.44038121,13.41943302,8.9106],
+            ['',52.51172446,13.32728717,5.337],
+            ['',52.56578505,13.39024484,5.1881],
+            ['',52.50917989,13.51212403,7.3534],
+            ['',52.46457197,13.46523627,7.3948],
+            ['',52.4652914,13.47051004,7.533],
+            ['',52.53915728,13.45674518,4.101],
+            ['',52.53468555,13.36225232,3.3189],
+            ['',52.53399037,13.37077159,2.7874],
+            ['',52.60530562,13.42153197,9.5535],
+            ['',52.55644953,13.35731621,5.1784],
+            ['',52.53832039,13.42005135,2.2788],
+            ['',52.526314,13.37935705,1.8689],
+            ['',52.53581479,13.38687311,2.1421],
+            ['',52.49538164,13.41048963,2.7645],
+            ['',52.52679787,13.40835769,0.7897],
+            ['',52.51078125,13.36641691,2.803],
+            ['',52.51718641,13.39047113,1.0292],
+            ['',52.53897489,13.43461203,2.9118],
+            ['',52.5356911,13.39655511,1.8348],
+            ['',52.53622061,13.41057959,1.8432],
+            ['',52.53856263,13.40357045,2.066],
+            ['',52.49596662,13.39364229,2.7814],
+            ['',52.52797901,13.40421502,0.8882],
+            ['',52.51609039,13.43471707,2.061],
+            ['',52.49551394,13.40595972,2.7251],
+            ['',52.52508319,13.37771728,1.9278],
+            ['',52.49963979,13.42542755,2.6557],
+            ['',52.51099447,13.4084221,1.0295],
+            ['',52.50682203,13.38417807,2.0318],
+            ['',52.53127624,13.38914949,1.6477],
+            ['',52.52561172,13.3990328,0.7411],
+            ['',52.52505077,13.4145335,0.8574],
+            ['',52.51821327,13.4123331,0.5378],
+            ['',52.52526864,13.41228997,0.7675],
+            ['',52.52269951,13.39352579,0.8294],
+            ['',52.52874884,13.40197342,0.9931],
+            ['',52.51715966,13.40896159,0.4169],
+            ['',52.51601487,13.40292644,0.4647],
+            ['',52.52034233,13.40102987,0.2682],
+            ['',52.51514658,13.40890578,0.6031]
+        ];
+        
+        var mapProp = {
+          center:myCenter,
+          zoom:15,
+          disableDefaultUI: true,
+            mapTypeControlOptions: {
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+            },
+            mapTypeId: MY_MAPTYPE_ID
+        };
+        
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker=new google.maps.Marker({
+            position:new google.maps.LatLng(lat, lon),
+            icon:'assets/images/tank.png',
+            url:'https://www.google.com/maps/@'+lat+','+lon+',15z'
+        });
+        
+        google.maps.event.addListener(marker, 'click', function() {
+            //window.location.href = this.url;
+            window.open(this.url);
+        });
+        marker.setMap(map);
+        
+        for (i = 0; i < markers.length; i++) {
+            if(markers[i][3] < 1){
+                var marker=new google.maps.Marker({
+                    position:new google.maps.LatLng(markers[i][1], markers[i][2]),
+                    icon:'assets/images/ring_green.svg',
+                    url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
+                });
+                
+                google.maps.event.addListener(marker, 'click', function(){
+                    window.open(this.url);
+                });
+            }else if(markers[i][3] < 2){
+                var marker=new google.maps.Marker({
+                    position:new google.maps.LatLng(markers[i][1], markers[i][2]),
+                    icon:'assets/images/ring_yellow.svg',
+                    url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
+                });
+                
+                google.maps.event.addListener(marker, 'click', function(){
+                    window.open(this.url);
+                });
+            }else if(markers[i][3] < 5){
+                var marker=new google.maps.Marker({
+                    position:new google.maps.LatLng(markers[i][1], markers[i][2]),
+                    icon:'assets/images/ring_orange.svg',
+                    url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
+                });
+                
+                google.maps.event.addListener(marker, 'click', function(){
+                    window.open(this.url);
+                });
+            }else{
+                var marker=new google.maps.Marker({
+                    position:new google.maps.LatLng(markers[i][1], markers[i][2]),
+                    icon:'assets/images/ring_grey.svg',
+                    url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
+                });
+                
+                google.maps.event.addListener(marker, 'click', function(){
+                    window.open(this.url);
+                });
+            }
+        
+            marker.setMap(map);
+        }
+        
+        // Map Style
+        var styledMapOptions = {
+        name: 'Custom Style'
+        };
+        
+        var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+        
+        map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+        
+    }
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+</head>
+<body>
+
+<div id="googleMap" style="width:580px;height:712px;"></div>
+
+<!-- Java Script -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-progressbar.js"></script>
+<script src="js/spy.js"></script>
+<script src="js/scripts.js"></script>
+<!-- Charts -->
+<script src="js/jquery.easypiechart.js"></script>
+<script src="js/chart.js"></script>
+
+</body>
+</html>
