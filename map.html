@@ -164,7 +164,7 @@
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
         var marker=new google.maps.Marker({
             position:new google.maps.LatLng(lat, lon),
-            icon:'assets/images/tank.png',
+            icon:'img/tank.png',
             url:'https://www.google.com/maps/@'+lat+','+lon+',15z'
         });
         
@@ -178,7 +178,7 @@
             if(markers[i][3] < 1){
                 var marker=new google.maps.Marker({
                     position:new google.maps.LatLng(markers[i][1], markers[i][2]),
-                    icon:'assets/images/ring_green.svg',
+                    icon:'img/ring_green.svg',
                     url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
                 });
                 
@@ -188,7 +188,7 @@
             }else if(markers[i][3] < 2){
                 var marker=new google.maps.Marker({
                     position:new google.maps.LatLng(markers[i][1], markers[i][2]),
-                    icon:'assets/images/ring_yellow.svg',
+                    icon:'img/ring_yellow.svg',
                     url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
                 });
                 
@@ -198,7 +198,7 @@
             }else if(markers[i][3] < 5){
                 var marker=new google.maps.Marker({
                     position:new google.maps.LatLng(markers[i][1], markers[i][2]),
-                    icon:'assets/images/ring_orange.svg',
+                    icon:'img/ring_orange.svg',
                     url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
                 });
                 
@@ -208,7 +208,7 @@
             }else{
                 var marker=new google.maps.Marker({
                     position:new google.maps.LatLng(markers[i][1], markers[i][2]),
-                    icon:'assets/images/ring_grey.svg',
+                    icon:'img/ring_grey.svg',
                     url:'http://maps.google.com/maps?q=loc:'+markers[i][1]+','+markers[i][2]
                 });
                 
